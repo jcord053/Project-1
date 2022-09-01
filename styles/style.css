@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+ 
+}
+
+:root {
+    --svgcolor: white;
+    --cardcolor: black;
+    --cardbackground: white;
+}
+
+html {
+    background: linear-gradient(90deg, #18b618, #066006);
+    font-family: 'Silkscreen', 'Cooperplate';
+  
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 1vh;
+}
+
+
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+#start-btn, #pause-btn, #restart-btn {
+    font-family: 'Silkscreen', 'Cooperplate';
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    margin: 0 5px;
+}
+
+#game {
+    width: 550px;
+    height: 550px;
+    border: 5px dashed white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+
+  .card.flipping {
+    transform: rotateY(180deg);
+  }
+
+
+
+.unflipped, .flipped {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+.unflipped {
+    fill: var(--svgcolor);
+    background-color: black;
+    border: 1px solid black;
+    
+}
+
+.flipped {
+    transform: rotateY(180deg);
+    background-color: var(--cardbackground);
+}
+
